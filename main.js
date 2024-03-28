@@ -2,6 +2,7 @@ import express from "express"
 
 import resolveIP from "./using Puppeteer/01 beginning/01.js"
 import {config} from "dotenv"
+import cors from "cors";
 config()
 
 import {exec} from "child_process"

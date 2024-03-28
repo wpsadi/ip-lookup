@@ -1,2 +1,2 @@
 # Information
-the code is just a web scrapper
+the code is just a web scrapper.
