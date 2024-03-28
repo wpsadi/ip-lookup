@@ -6,13 +6,17 @@ config()
 
 import {exec} from "child_process"
 
+let deployStatus = ""
+
 // Replace 'ls' with the command you want to run
 let test = ()=>exec('npx puppeteer browsers install chrome', (error, stdout, stderr) => {
   if (error) {
     console.error(`Error executing command: ${error}`);
+    deployStatus = `Error executing command: ${error}`
     return;
   }
   if (stderr) {
+    deployStatus = `Command stderr: ${stderr}`
     console.error(`Command stderr: ${stderr}`);
     return;
   }
@@ -22,6 +26,10 @@ let test = ()=>exec('npx puppeteer browsers install chrome', (error, stdout, std
 test()
 
 const app = express()
+
+app.use("/status", (req, res) => {
+    res.send(deployStatus)
+})
 
 app.use("/ip/:ip", async(req, res) => {
     try{
