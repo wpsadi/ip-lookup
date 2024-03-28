@@ -7,7 +7,13 @@ const resolveIP = async (ip)=>{
         const browser = await puppeteer.launch({
             headless:"shell",
             // defaultViewport:false,
-            // userDataDir:"./tmp"
+            // userDataDir:"./tmp",
+            args:[
+                "--no-sandbox",
+                "--disable-setuid-sandbox",
+                "--no-zygote",
+                "--single-process"
+            ]
         });
         const page = await browser.newPage();
     
