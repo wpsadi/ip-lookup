@@ -41,6 +41,6 @@ app.use("*", (req, res) => {
     res.send("send Request to /ip/:ip-address<br> Example: /ip/8.8.8.8")
 })
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("Server running on port 3000")
 })
