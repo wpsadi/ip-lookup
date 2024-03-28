@@ -26,6 +26,10 @@ let test = ()=>exec('npx puppeteer browsers install chrome', (error, stdout, std
 test()
 
 const app = express()
+app.use(cors({origin:"*",credentials:true}))
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+
 
 app.use("/status", (req, res) => {
     res.send(deployStatus)
