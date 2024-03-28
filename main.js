@@ -1,6 +1,8 @@
 import express from "express"
 
 import resolveIP from "./using Puppeteer/01 beginning/01.js"
+import {config} from "dotenv"
+config()
 
 import {exec} from "child_process"
 
