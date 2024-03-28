@@ -5,7 +5,7 @@ import puppeteer from "puppeteer";
 const resolveIP = async (ip)=>{
     try{
         const browser = await puppeteer.launch({
-            // headless:false,
+            headless:"shell",
             // defaultViewport:false,
             userDataDir:"./tmp"
         });
