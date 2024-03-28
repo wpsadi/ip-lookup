@@ -7,7 +7,7 @@ const resolveIP = async (ip)=>{
         const browser = await puppeteer.launch({
             headless:"shell",
             // defaultViewport:false,
-            userDataDir:"./tmp"
+            // userDataDir:"./tmp"
         });
         const page = await browser.newPage();
     
